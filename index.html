@@ -4175,7 +4175,7 @@
           return;
         }
         if (mode === "orbit") {
-          orbit.thetaT -= dx * 0.0045;
+          orbit.thetaT += dx * 0.0045;
           orbit.phiT = THREE.MathUtils.clamp(
             orbit.phiT - dy * 0.003,
             0.14,
@@ -4277,8 +4277,8 @@
         if (e.key === "Enter" && mode === "seat" && !confirmed) grabSeat();
         if (mode === "orbit") {
           userInteracted = true;
-          if (e.key === "ArrowLeft") orbit.thetaT += 0.12;
-          if (e.key === "ArrowRight") orbit.thetaT -= 0.12;
+          if (e.key === "ArrowLeft") orbit.thetaT -= 0.12;
+          if (e.key === "ArrowRight") orbit.thetaT += 0.12;
           if (e.key === "ArrowUp")
             orbit.phiT = Math.max(0.14, orbit.phiT - 0.08);
           if (e.key === "ArrowDown")
